@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - NGO Connect</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <header class="topbar">
+
+        <div class="topbar-brand">
+            <div class="small-logo">NC</div>
+
+            <div>
+                <strong>NGO Connect</strong>
+                <span>Management System</span>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+
+            <span id="adminName">
+                Admin
+            </span>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <div class="dashboard-heading">
+
+            <div>
+                <h1>Dashboard</h1>
+
+                <p>
+                    Welcome back, <span id="welcomeName">Admin</span>
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- STAT CARDS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">V</div>
+
+                <div>
+                    <p>Total Volunteers</p>
+                    <h2 id="volunteerCount">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">D</div>
+
+                <div>
+                    <p>Donation Records</p>
+                    <h2 id="donorCount">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">₹</div>
+
+                <div>
+                    <p>Total Donations</p>
+                    <h2 id="donationTotal">₹0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">P</div>
+
+                <div>
+                    <p>Projects</p>
+                    <h2 id="projectCount">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- VOLUNTEERS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Volunteer Management</h2>
+
+                    <p>
+                        Add and manage NGO volunteers.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="volunteerForm" class="data-form">
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Volunteer Name</label>
+
+                        <input
+                            type="text"
+                            id="volunteerName"
+                            placeholder="Enter name"
+                            required
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="volunteerEmail"
+                            placeholder="Enter email"
+                            required
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Phone</label>
+
+                        <input
+                            type="text"
+                            id="volunteerPhone"
+                            placeholder="Enter phone"
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Skills</label>
+
+                        <input
+                            type="text"
+                            id="volunteerSkills"
+                            placeholder="Example: Teaching, Design"
+                        >
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="btn primary-btn">
+                    Add Volunteer
+                </button>
+
+            </form>
+
+
+            <p id="volunteerMessage" class="message"></p>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Skills</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="volunteerTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- DONATIONS -->
+
+        <section class="dashboard-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Donation Management</h2>
+
+                    <p>
+                        Record and track NGO donations.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="donationForm" class="data-form">
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Donor Name</label>
+
+                        <input
+                            type="text"
+                            id="donorName"
+                            placeholder="Enter donor name"
+                            required
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Amount</label>
+
+                        <input
+                            type="number"
+                            id="donationAmount"
+                            placeholder="Enter amount"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Purpose</label>
+
+                        <input
+                            type="text"
+                            id="donationPurpose"
+                            placeholder="Example: Education"
+                        >
+                    </div>
+
+
+                    <div>
+                        <label>Payment Method</label>
+
+                        <select id="paymentMethod">
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                            <option value="UPI">
+                                UPI
+                            </option>
+
+                            <option value="Bank Transfer">
+                                Bank Transfer
+                            </option>
+
+                            <option value="Cash">
+                                Cash
+                            </option>
+
+                            <option value="Cheque">
+                                Cheque
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="btn primary-btn">
+                    Add Donation
+                </button>
+
+            </form>
+
+
+            <p id="donationMessage" class="message"></p>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Donor</th>
+                            <th>Amount</th>
+                            <th>Purpose</th>
+                            <th>Payment</th>
+                            <th>Date</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="donationTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI ASSISTANT -->
+
+        <section class="ai-section">
+
+            <div>
+
+                <h2>NGO Connect AI Assistant</h2>
+
+                <p>
+                    Ask questions about your NGO data, volunteers or donations.
+                </p>
+
+            </div>
+
+            <div class="ai-chat">
+
+                <div id="chatMessages" class="chat-messages">
+
+                    <div class="ai-message">
+                        Hello! I'm your NGO Connect AI assistant. Ask me about your NGO data.
+                    </div>
+
+                </div>
+
+
+                <form id="aiForm" class="ai-form">
+
+                    <input
+                        type="text"
+                        id="aiInput"
+                        placeholder="Ask something..."
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button type="submit" class="btn primary-btn">
+                        Send
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

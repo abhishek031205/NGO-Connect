@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NGO Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="brand-box">
+            <div class="logo">NC</div>
+
+            <h1>NGO Connect</h1>
+
+            <p>NGO Management System</p>
+        </div>
+
+        <div class="auth-card">
+
+            <div class="auth-tabs">
+
+                <button id="loginTab" class="tab active">
+                    Login
+                </button>
+
+                <button id="registerTab" class="tab">
+                    First Admin
+                </button>
+
+            </div>
+
+            <!-- LOGIN -->
+
+            <section id="loginSection">
+
+                <h2>Admin Login</h2>
+
+                <p class="muted">
+                    Login to access your NGO dashboard.
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="admin@example.com"
+                        required
+                    >
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button type="submit" class="btn primary-btn full-btn">
+                        Login
+                    </button>
+
+                </form>
+
+                <p id="loginMessage" class="message"></p>
+
+            </section>
+
+            <!-- FIRST ADMIN -->
+
+            <section id="registerSection" class="hidden">
+
+                <h2>Create First Admin</h2>
+
+                <p class="muted">
+                    Use this only when setting up NGO Connect for the first time.
+                </p>
+
+                <form id="registerForm">
+
+                    <label for="registerName">
+                        Admin Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Your name"
+                        required
+                    >
+
+                    <label for="registerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="admin@example.com"
+                        required
+                    >
+
+                    <label for="registerPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Minimum 6 characters"
+                        minlength="6"
+                        required
+                    >
+
+                    <button type="submit" class="btn primary-btn full-btn">
+                        Create Admin
+                    </button>
+
+                </form>
+
+                <p id="registerMessage" class="message"></p>
+
+            </section>
+
+        </div>
+
+        <a href="index.html" class="back-link">
+            ← Back to home
+        </a>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
